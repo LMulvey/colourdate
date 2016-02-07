@@ -2,46 +2,51 @@
 <html lang='en'>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 		<title>What is the colour today?</title>
-		
+		<meta name="description" content="what colour is it?"/>
+
+<meta property="og:title" content="What colour is it?" />
+<meta property='og:locale' content="en_GB"/>
+<meta property='og:description' content="the time....... now in colour."/>
+<meta property="og:type" content="Website" />
+<meta property='og:site_name' content="SCN9A"/>
+<meta property="og:url" content="http://whatcolourisit.scn9a.org/" />
+<meta property="og:image" content="http://scn9a.org/whatcolourisit/1.jpg" />
+
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css' />
 		<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet' type='text/css' />
 		
 		<style>
 			body { font-family: 'Raleway', sans-serif; text-align: center; color: white; }
-			@media all and (max-width: 1024px) {
 			
-			.date { font-size:40px; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.time { font-size:25px; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.colour { font-size:8px; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.header > h2 {font-size: 16px; margin-bottom: 2px; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.header > h4 {font-size: 12px; margin-bottom: 0px; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.header > p {font-size: 8px; margin-top:0; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.container {margin: auto; width: 250px; padding: 10%; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.copyLink { color: white; border-radius: 5px; padding: 5px; margin: 0; font-size: 10px; transition:all 0.6s; -webkit-transition:all 0.6s;}
+			@media all and (max-width: 1024px) {
+				.date { font-size:40px; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.time { font-size:25px; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.colour { font-size:8px; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.header > h2 {font-size: 16px; margin-bottom: 2px; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.header > h4 {font-size: 12px; margin-bottom: 0px; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.header > p {font-size: 8px; margin-top:0; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.container {margin: auto; width: 250px; padding: 10%; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.copyLink { color: white; border-radius: 5px; padding: 5px; margin: 0; font-size: 10px; transition:all 0.6s; -webkit-transition:all 0.6s;}
 			}
 			
 			@media all and (min-width: 1024px) {
-			
-			.date { font-size:80px; font-weight:400; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.time { font-size:60px; font-weight:400; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.colour { font-size:14px; font-weight:400; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.header > h2 {font-size: 24px; margin-bottom: 2px; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.header > h4 {font-size: 16px; margin-bottom: 0px; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.header > p {font-size: 10px; margin-top:0; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.container {margin: auto; width: 400px; padding: 10%; transition:all 0.6s; -webkit-transition:all 0.6s;}
-			.copyLink { color: white; border-radius: 5px; padding: 10px; font-size: 15px; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.date { font-size:80px; font-weight:400; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.time { font-size:60px; font-weight:400; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.colour { font-size:14px; font-weight:400; color:white; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.header > h2 {font-size: 24px; margin-bottom: 2px; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.header > h4 {font-size: 16px; margin-bottom: 0px; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.header > p {font-size: 10px; margin-top:0; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.container {margin: auto; width: 400px; padding: 10%; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.copyLink { color: white; border-radius: 5px; padding: 10px; font-size: 15px; transition:all 0.6s; -webkit-transition:all 0.6s;}
 			}
-			
-			
-			.header {padding: 25px;}
+
+			.header { padding: 5px; }
 		</style>
 	</head>
-	
 
-	</head>
-
-	<body onLoad="doDate()">
+	<body onLoad="doTheColourThing()">
 		<div class="container">
 			<div class="header">
 				<h2>what date / time / colour is it ?</h2>
@@ -49,8 +54,8 @@
 				<p>(also, this spoiler below me may give you a hint.)</p>
 			</div> <br />
 			
-			<a href="http://whatcolourisit.scn9a.org/" alt="WhatColourIsIt?" class="copyLink" id="linky">Modified from WhatColourIsIt.</a>
-			<a href="http://www.github.com/lmulvey/colourdate/" alt="GitHub Linkeroo" class="copyLink" id="linky2"><i class="fa fa-github"></i> GitHub Repo</a>
+			<a href="http://whatcolourisit.scn9a.org/" class="copyLink" id="linky">Modified from WhatColourIsIt.</a>
+			<a href="http://www.github.com/lmulvey/colourdate/" class="copyLink" id="linky2"><i class="fa fa-github"></i> GitHub Repo</a>
 			<br />
 			
 			<span class="date" id="d"></span> <br/>
@@ -59,10 +64,10 @@
 		</div>
 	</body>
 	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
 	<script type="text/javascript">
-		function doDate(){
-			
+		function doTheColourThing(){
+
 			$("body").css({"transition": "all 0.8s", "-webkit-transition": "all 0.8s"});
 			
 			var i = new Date();
@@ -97,10 +102,12 @@
 			$("#linky").css({"background": timeHex});
 			$("#linky2").css({"background": timeHex});
 			
-			document.body.style = "background: " + timeHex + "; background: -webkit-linear-gradient(to left, " + timeHex + ", " + dateHex + "); background: linear-gradient(to left, " + timeHex + ", " + dateHex + ");";
+			// document.body.style doesn't work on mobile for some silly reason.
 			
-			setTimeout(function(){ doDate();}, 1000);
+				// document.body.style = "background: " + timeHex + "; background: -webkit-linear-gradient(to left, " + timeHex + ", " + dateHex + "); background: linear-gradient(to left, " + timeHex + ", " + dateHex + ");";
+			document.body.style.background = "linear-gradient(to left, " + timeHex + ", " + dateHex + ")"; //Just risking it without the webkit. Safari can eat it.
+			setTimeout(function(){ doTheColourThing();}, 1000);
 		}
 	</script>
-
 </html>
+ 

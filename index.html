@@ -40,8 +40,8 @@
 				.header > p {font-size: 10px; margin-top:0; transition:all 0.6s; -webkit-transition:all 0.6s;}
 				.container { margin: auto; width: 400px; padding: 10%; transition:all 0.6s; -webkit-transition:all 0.6s; }
 				.copyLink { color: white; border-radius: 5px; padding: 10px; font-size: 15px; transition:all 0.6s; -webkit-transition:all 0.6s;}
-				.forwardLink { color: white; border-radius: 5px; padding: 5px; font-size: 20px; transition:all 0.6s; -webkit-transition:all 0.6s;}
-				.forwardLink:hover { border: 2px solid white; }
+				.forwardLink { color: white; border: 0px; border-radius: 5px; padding: 5px; font-size: 20px; transition:all 0.6s; -webkit-transition:all 0.6s;}
+				.forwardLink:hover { border: 1px solid white; transition:all 0.6s; -webkit-transition:all 0.6s;}
 			}
 
 			.header { padding: 5px; }
@@ -63,69 +63,67 @@
 			<span class="date" id="d"></span> <br/>
 			<span class="time" id="t"></span> <br/><br /><br />
 			<span class="colour" id="c"></span><span class="colour" id="c2"></span> <br/><br />
-			<a class="forwardLink" id="addDays"><i class="fa fa-fast-forward"></i> Fast Forward!</a>
+			<button class="forwardLink" id="addDays"><i class="fa fa-fast-forward"></i> Fast Forward!</button>
 		</div>
 	</body>
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
 	<script type="text/javascript">
 	
-		var i = new Date();
+			// Global date var - can be modded by the fast-forward click
+			var dmy = new Date();
 		
-		function doTheDateThing() {
-			var day = i.getDate();
-			var month = i.getMonth();
-			var year = i.getFullYear();
-			
-			if (day < 10){day = "0" + day};
-			if (month < 10){month = "0" + month};
-			
-			day.toString();
-			month.toString();
-			year = year.toString().substr(2,2);
-			
-			$("#d").html(month + "/" + day + "/" + year);
-			var dateHex = "#" + month + day + year;
-			$("#c").html(dateHex + " // ");
-			return dateHex;
-		}
-			
-		function doTheColourThing(nt){
+		function doTheColourThing(){
 
 			$("body").css({"transition": "all 0.8s", "-webkit-transition": "all 0.8s"});
 			
+			var i = new Date();
 			var hour = i.getHours();
 			var minute = i.getMinutes();
 			var second = i.getSeconds();
+			
+			var day = dmy.getDate();
+			var month = dmy.getMonth()+1;
+			var year = dmy.getFullYear();
 			
 			if (hour < 10){hour = "0" + hour};
 			if (minute < 10){minute = "0" + minute};
 			if (second < 10){second = "0" + second};
 			
+			if (day < 10){day = "0" + day};
+			if (month < 10){month = "0" + month};
+		
 			hour.toString();
 			minute.toString();
 			second.toString();
 			
+			day.toString();
+			month.toString();
+			year = year.toString().substr(2,2);
+			
 			var timeHex = "#" + hour + minute + second;
-			var dateHex = doTheDateThing();
+			var dateHex = "#" + month + day + year;
 			
 			$("#t").html(hour + " : " + minute + " : " + second);
 			$("#c2").html(timeHex);
+			
+			$("#d").html(month + "/" + day + "/" + year);
+			$("#c").html(dateHex + " // " + timeHex);
 			
 			$("#linky").css({"background": timeHex});
 			$("#linky2").css({"background": timeHex});
 			$("#addDays").css({"background": timeHex});
 			
 			// document.body.style doesn't work on mobile for some silly reason.
-			
-				// document.body.style = "background: " + timeHex + "; background: -webkit-linear-gradient(to left, " + timeHex + ", " + dateHex + "); background: linear-gradient(to left, " + timeHex + ", " + dateHex + ");";
+			// document.body.style = "background: " + timeHex + "; background: -webkit-linear-gradient(to left, " + timeHex + ", " + dateHex + "); background: linear-gradient(to left, " + timeHex + ", " + dateHex + ");";
 			 document.body.style.background = "linear-gradient(to left, " + timeHex + ", " + dateHex + ")"; //Just risking it without the webkit. Safari can eat it.
 			setTimeout(function(){ doTheColourThing();}, 1000);
 		}
 		
 		$( "#addDays" ).click(function() {
-			i.setDate(i.getDate() + 5);
+			dmy.setDate(dmy.getDate() + 30);
 		});
+
 	</script>
 </html>
  
